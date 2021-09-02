@@ -1,0 +1,1 @@
+mongodb+srv://ricardo_nunes:ricardo_nunes@cluster0.jlykd.mongodb.net/escola?retryWrites=true&w=majority
