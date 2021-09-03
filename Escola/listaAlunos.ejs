@@ -27,6 +27,7 @@
                             <th>Nome</th>
                             <th>Idade</th>
                             <th>Serie do Aluno</th>
+                            <th>ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,11 +36,16 @@
                                 <td><%=aluno.nome %></td>
                                 <td><%=aluno.idadeAluno %></td>
                                 <td><%=aluno.Serie %></td>
+                                <td>
+                                    <a href="" class="btn btn-warning">Editar</a>
+                                    <a  href="/deletarAluno/<%=aluno._id %>" class="btn btn-danger" >Deletar</a>
+                                </td>
                             </tr>
 
                         <%  }) %>
                     </tbody>
                 </table>
+    
             </div>
         </div>
     </section>

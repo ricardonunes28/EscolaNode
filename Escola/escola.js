@@ -41,7 +41,7 @@ app.get("/cadastrarAlunos", (req, res) => {
 
 app.post("/cadastrarAlunos", (req, res) => {
     let aluno = new Alunos();
-    
+
     aluno.nome = req.body.nome; // corpo da minha requisição
     aluno.idadeAluno = req.body.idade;
     aluno.Serie = req.body.serieA;
@@ -53,6 +53,15 @@ app.post("/cadastrarAlunos", (req, res) => {
     })
 })
 
+app.get("/deletarAluno/:id", (req, res) => {
+    let chave = req.params.id; // pegando o id do parametro
+    Alunos.deleteOne({ _id: chave }, (err, result) => {
+        if (err)
+            return res.status(500).send("Erro ao excluir registro");
+        res.redirect("/listaAlunos")
+    });
+
+})
 
 app.listen(port, () => {
     console.log("Servidor rodando na porta " + port)

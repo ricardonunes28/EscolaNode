@@ -4,18 +4,22 @@ $("#nome").blur(function () {
         $("#nome").css('borderColor', 'red');
     } else {
         $("#nome").css('borderColor', 'green');
+    
         
     }
 });
 $("#idade").blur(function () {
     var idade = $("#idade").val();
-    if ( idade =='' || isNaN(idade)) {
+    if ( idade =='' || isNaN(idade) || idade >=130 || idade <= 1) {
         $("#idade").css('borderColor', 'red');
     } else {
         $("#idade").css('borderColor', 'green');
         
+        
     }
 });
+
+
 // $("#inputEmail4").blur(function () {
 //     var email = $('#inputEmail4').val();
 //     var email_regex = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
