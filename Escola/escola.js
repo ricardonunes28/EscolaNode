@@ -19,6 +19,7 @@ app.set("views", __dirname, "/views");//minhas visualizações que vou precisar 
 
 app.use(express.urlencoded());//permitindo que os dados passos, que haja fluxo(transitem) enrte minhas paginas 
 app.use(express.json());// o fluxo dos meus arquivos seja em formato json
+app.use(express.static("public")); //Minhas pasta com permisão para css e js
 
 app.get("/", (req, res) => {
     res.send("Pagina Inicial") // rotas: aqui vou no minha pasta raiz
@@ -37,9 +38,10 @@ app.get("/listaAlunos", (req, res) => {
 app.get("/cadastrarAlunos", (req, res) => {
     res.render("formescola")
 });
+
 app.post("/cadastrarAlunos", (req, res) => {
     let aluno = new Alunos();
-
+    
     aluno.nome = req.body.nome; // corpo da minha requisição
     aluno.idadeAluno = req.body.idade;
     aluno.Serie = req.body.serieA;
@@ -50,11 +52,6 @@ app.post("/cadastrarAlunos", (req, res) => {
         return res.redirect("/listaAlunos");
     })
 })
-
-
-
-
-
 
 
 app.listen(port, () => {
