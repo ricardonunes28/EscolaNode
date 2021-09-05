@@ -37,15 +37,19 @@
                                 <td><%=aluno.idadeAluno %></td>
                                 <td><%=aluno.Serie %></td>
                                 <td>
-                                    <a href="" class="btn btn-warning">Editar</a>
+                                    <a href="/editAluno/<%=aluno.id %>" class="btn btn-warning">Editar</a>
                                     <a  href="/deletarAluno/<%=aluno._id %>" class="btn btn-danger" >Deletar</a>
                                 </td>
                             </tr>
 
                         <%  }) %>
+                        <% if(listaAlunos == 0) { %>
+                            <tr>
+                                <td class="text text-uppercase"><mark>NENHUM ALUNO CADASTRADO</mark></td>
+                            </tr>
+                        <% } %>
                     </tbody>
                 </table>
-    
             </div>
         </div>
     </section>

@@ -1,10 +1,12 @@
+// CARREGANDO MODULOS
+const { application } = require("express");
 var express = require("express");
 var mongoose = require("mongoose");
 
 const app = express();
 const port = 3000;
 
-mongoose.connect("mongodb+srv://ricardo_nunes:ricardo_nunes@cluster0.jlykd.mongodb.net/Escola?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("meu banco", { useNewUrlParser: true, useUnifiedTopology: true });
 
 const Alunos = mongoose.model("alunos", {
     nome: String,
@@ -62,6 +64,27 @@ app.get("/deletarAluno/:id", (req, res) => {
     });
 
 })
+
+var dbURI = "meu banco";
+
+mongoose.connect(dbURI);
+
+mongoose.connection.on('connected', function () {
+    console.log("Conexão padrão do Mongoose aberta para" + dbURI);
+
+    // contar documentos de uma coleção particular
+    mongoose.connection.db.collection("alunos").count(function (err, count) {
+        console.dir(err);
+        console.dir(count);
+        if (count == 0) {
+            console.log("Nenhum registro encontrado.");
+        }
+        else {
+            console.log("Registros encontrados : " + count);
+        }
+    });
+});
+
 
 app.listen(port, () => {
     console.log("Servidor rodando na porta " + port)

@@ -19,18 +19,18 @@
                 <form action="/cadastrarAlunos" method="POST">
                     <div class="form-group">
                         <laberl for="nome">Nome</laberl>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do aluno">
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do aluno" required>
                     </div>
                     <div class="form-group">
                         <label for="idade">Idade</label>
-                        <input type="number" class="form-control" id="idade" name="idade" placeholder="10">
+                        <input type="number" class="form-control" id="idade" name="idade" placeholder="10" required>
                     </div>
                     <div class="form-group">
                         <label for="serieA">Serie do aluno</label>
-                        <input type="text" class="form-control" id="serieA" name="serieA" placeholder="5 serie">
+                        <input type="text" class="form-control" id="serieA" name="serieA" placeholder="5 serie" required>
                     </div>
 
-                    <button  class="btn btn-primary" type="submit" >Enviar</button>
+                    <button id="enviar" class="btn btn-primary" type="submit" >Enviar</button>
                 </form>
             </div>
         </div>
