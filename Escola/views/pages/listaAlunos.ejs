@@ -32,9 +32,29 @@
                                 <td><%=aluno.Serie %></td>
                                 <td>
                                     <a href="/listaAlunos/editarAluno/<%=aluno.id %>" class="btn btn-warning">Editar</a>
-                                    <a  href="/listaAlunos/deletarAluno/<%=aluno._id %>" class="btn btn-danger" >Deletar</a>
+                                    <a class="btn btn-danger " type="button" data-toggle="modal" data-target="#modalExemplo">
+                                        Deletar</a>
                                 </td>
                             </tr>
+                            <section class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <section class="modal-dialog" role="document">
+                                  <section class="modal-content">
+                                    <section class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Tem certeza disso!</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </section>
+                                    <section class="modal-body">
+                                      Ao clicar em <strong>DELETAR</strong>, você confirma que deseja apagar as informações registradas.
+                                    </section>
+                                    <section class="modal-footer">
+                                      <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+                                      <a href="/listaAlunos/deletarAluno/<%=aluno._id %>" type="button" class="btn btn-danger">Deletar</a>
+                                    </section>
+                                  </section>
+                                </section>
+                              </section>
 
                         <%  }) %>
                         <% if(listaAlunos == 0) { %>
