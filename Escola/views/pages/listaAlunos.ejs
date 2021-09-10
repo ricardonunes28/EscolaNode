@@ -1,0 +1,50 @@
+<%- include("../partials/header"); %>
+    <section class="container">
+        <section class="row">
+            <section class="col">
+                <section class="row mt-5">
+                    <section class="col-6">
+                        <h1>Lista de Alunos</h1>
+
+                    </section>
+                    <section class="col-6">
+                        <a href="listaAlunos/cadastrarAlunos" class="btn btn-primary">Inserir alunos</a>
+                    </section>
+                    <form action="listaAlunos/pesquisa" method="GET">
+                        <input  type="search" name="pesquisa">
+                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                    </form>
+                </section>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th>Serie do Aluno</th>
+                            <th>ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% listaAlunos.forEach(function(aluno){ %>
+                            <tr>
+                                <td><%=aluno.nome %></td>
+                                <td><%=aluno.idadeAluno %></td>
+                                <td><%=aluno.Serie %></td>
+                                <td>
+                                    <a href="/listaAlunos/editarAluno/<%=aluno.id %>" class="btn btn-warning">Editar</a>
+                                    <a  href="/listaAlunos/deletarAluno/<%=aluno._id %>" class="btn btn-danger" >Deletar</a>
+                                </td>
+                            </tr>
+
+                        <%  }) %>
+                        <% if(listaAlunos == 0) { %>
+                            <tr>
+                                <td class="text text-uppercase"><mark>NENHUM ALUNO CADASTRADO</mark></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section>
+    <%- include("../partials/footer") %>

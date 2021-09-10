@@ -1,0 +1,25 @@
+<%- include("../partials/header.ejs") %>
+    <section class="container">
+        <section class="row">
+            <section class="col">
+                <h1 class="mt-5">Editar Alunos</h1>
+                <form action="/listaAlunos/editarAluno" method="POST">
+                    <section class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Aluno" value="<%=resultado.nome%>">
+                    </section>
+                    <section class="form-group">
+                        <label for="idade">Idade</label>
+                        <input type="number" class="form-control" id="idade" name="idade" placeholder="10" value="<%=resultado.idadeAluno%>">
+                    </section>
+                    <section class="form-group">
+                        <label for="serieA">Serie do aluno</label>
+                        <input type="text" class="form-control" id="serieA" name="serieA" placeholder="5 serie" value="<%=resultado.Serie%>">
+                    </section>
+                    <input type="hidden" name="id" value="<%= resultado._id %>">
+                    <button id="enviar" class="btn btn-primary" type="submit">Enviar</button>
+                </form>
+            </section>
+        </section>
+    </section>
+    <%- include("../partials/footer") %>

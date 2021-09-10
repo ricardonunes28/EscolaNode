@@ -43,8 +43,12 @@
                                     <a href="" class="btn btn-warning">Editar</a>
                                 </td>
                             </tr>
-
                         <%  }) %>
+                        <% if(listaAlunos == 0) { %>
+                            <tr>
+                                <td class="text text-uppercase"><mark>NENHUM PRODUTO CADASTRADO</mark></td>
+                            </tr>
+                        <% } %>
                     </tbody>
                 </table>
             </div>
