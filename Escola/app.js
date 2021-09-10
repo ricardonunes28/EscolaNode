@@ -21,7 +21,7 @@ app.use("/listaAlunos", escola_router);
 
 // rotas: aqui vou no minha pasta raiz
 app.get("/", (req, res) => {
-    res.send("Pagina Inicial")
+    res.render("views/pages/index")
 });
 
 
